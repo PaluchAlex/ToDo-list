@@ -12,7 +12,7 @@ main().catch((err) => console.log(err));
 
 async function main() {
     // await mongoose.connect("mongodb://127.0.0.1:27017/todolistDB");
-    await mongoose.connect("mongodb+srv://admin-alex:test123@cluster0.ecaqs3f.mongodb.net/todolistDB");
+    await mongoose.connect("mongodb+srv://admin-alex:<password>@cluster0.ecaqs3f.mongodb.net/todolistDB");
 
 
     const itemsSchema = new mongoose.Schema({ task: String });
