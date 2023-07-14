@@ -1,0 +1,29 @@
+<%- include("header") -%>
+
+    <div class="box" id="heading">
+        <h1> <%= titleText %> </h1>
+    </div>
+
+    <div class="box">
+
+        <% newLIarr.forEach(element => { %>
+            <form action="/delete" method="post">
+                <input type="hidden" name="listName" value="<%= titleText %>"> 
+                <div class="item">
+                    <input type="checkbox" value="<%= element._id %>" name="checkbox" onChange="this.form.submit()">
+                    <p> <%= element.task %> </p>
+                </div>
+            </form>
+        <% }); %>
+
+        <form class="item" action="/" method="post">
+
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+    
+            <button type="submit" name="list" value=<%= titleText %>>+</button>
+        </form>
+
+    </div>
+<%- include("footer") -%>
+    
+
